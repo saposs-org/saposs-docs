@@ -10,19 +10,19 @@ As known, the software or application is made from a set of all modules. In Sapo
 
 In order to create a view, please follow the requirements steps by steps:
 
-- Download the project template for view [here](http://www.saposs.com/downloads/ViewProjectTemplate.zip).
+- Download the project template for view [here](http://www.saposs.com/downloads/Saposs.WF.View.1.0.0.zip).
 - Follow to create a new view [here](/create-a-view-saposs-wf).
 
 ## Handler
 
 In order to create a handler, please follow the requirements steps by steps:
 
-- Download the project template for handler [here](http://www.saposs.com/downloads/HandlerProjectTemplate.zip).
+- Download the project template for handler [here](http://www.saposs.com/downloads/Saposs.WF.Handler.1.0.0.zip).
 - Follow to create a new handler [here](/create-a-handler-saposs-wf).
 
 ## Service
 
 In order to create a service, please follow the requirements steps by steps:
 
-- Download the project template for service [here](http://www.saposs.com/downloads/ServiceProjectTemplate.zip).
+- Download the project template for service [here](http://www.saposs.com/downloads/Saposs.Service.1.0.0.zip).
 - Follow to create a new service [here](/create-a-service-saposs-wf).
