@@ -1,0 +1,19 @@
+site_name: Saposs Documentation
+theme:
+  name: 'material'
+  favicon: 'assets/images/favicon.ico'
+  logo: 'assets/images/logo.png'
+nav:
+  - 'Welcome to Saposs': 'index.md'
+  - 'Introduce to Saposs WF': 'intro-saposs-wf.md'
+  - 'Quick Tour': 'quick-tour-saposs-wf.md'
+  - 'What is Saposs WF Component?': 'what-is-saposs-wf-component.md'
+  - 'Create a new View': 'create-a-view-saposs-wf.md'
+  - 'Create a new Handler': 'create-a-handler-saposs-wf.md'
+  - 'Create a new Service': 'create-a-service-saposs-wf.md'
+  - 'Connect View-Handler-Service': 'connect-v-h-s-saposs-wf.md'
+  - 'Upload Component': 'upload-component-saposs-wf.md'
+  - 'About Documentation': 'about.md'
+markdown_extensions:
+  - codehilite
+copyright: 'Copyright 2019 by Saposs. All rights reserved.'
