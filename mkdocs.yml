@@ -16,4 +16,7 @@ nav:
   - 'About Documentation': 'about.md'
 markdown_extensions:
   - codehilite
+site_description: 'All documents and user guides for Saposs.'
+site_author: 'saposs'
+google_analytics: ['UA-89360024-2', 'saposs.com']
 copyright: 'Copyright 2019 by Saposs. All rights reserved.'
