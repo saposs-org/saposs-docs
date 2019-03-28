@@ -18,7 +18,7 @@ Without Saposs, you have to create all software components that will depend on m
 
 ## Bugs or Issues
 
-If any problem is found, please report any bug or issue to [Saposs Issues](https://saposs-org.github.io/saposs-tracker/issues). We always appreciate your contributions. Thanks a lot :)
+If any problem is found, please report any bug or issue to [Saposs Issues](https://github.com/saposs-org/saposs-tracker/issues). We always appreciate your contributions. Thanks a lot :)
 
 ## Copyright and License
 
