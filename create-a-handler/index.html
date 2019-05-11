@@ -40,7 +40,7 @@
     
     
       
-        <title>Introduce Saposs WF - Saposs Documentation</title>
+        <title>Create a new Handler - Saposs Documentation</title>
       
     
     
@@ -104,7 +104,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#introduce-saposs-wf" tabindex="1" class="md-skip">
+      <a href="#create-a-new-handler" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -129,7 +129,7 @@
               Saposs Documentation
             </span>
             <span class="md-header-nav__topic">
-              Introduce Saposs WF
+              Create a new Handler
             </span>
           
         </div>
@@ -207,63 +207,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Introduce Saposs WF
-      </label>
-    
-    <a href="./" title="Introduce Saposs WF" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../intro-saposs-wf/" title="Introduce Saposs WF" class="md-nav__link">
       Introduce Saposs WF
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#why-using-saposs-wf" title="Why using Saposs WF?" class="md-nav__link">
-    Why using Saposs WF?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-does-saposs-wf-work" title="How does Saposs WF work?" class="md-nav__link">
-    How does Saposs WF work?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#install-saposs-wf" title="Install Saposs WF" class="md-nav__link">
-    Install Saposs WF
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
     
@@ -319,11 +267,20 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../create-a-handler/" title="Create a new Handler" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="Create a new Handler" class="md-nav__link md-nav__link--active">
       Create a new Handler
     </a>
+    
   </li>
 
     
@@ -416,36 +373,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#why-using-saposs-wf" title="Why using Saposs WF?" class="md-nav__link">
-    Why using Saposs WF?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-does-saposs-wf-work" title="How does Saposs WF work?" class="md-nav__link">
-    How does Saposs WF work?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#install-saposs-wf" title="Install Saposs WF" class="md-nav__link">
-    Install Saposs WF
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -457,22 +384,68 @@
               
                 
                 
-                <h1 id="introduce-saposs-wf">Introduce Saposs WF</h1>
-<p>Saposs WF is a Windows desktop application which was built on Saposs Framework. It assists you to build any desktop application which will become easier to maintain.</p>
-<h2 id="why-using-saposs-wf">Why using Saposs WF?</h2>
-<p>Saposs WF provides you a simple UI to manage all components. Additionally, you're able to configure the settings.</p>
-<h2 id="how-does-saposs-wf-work">How does Saposs WF work?</h2>
-<p>Saposs WF separated an application into 2 parts: administrator part and development part. For administrator part, this part is for any developer or programmer. There, you can manage all components and configure any setting. For development part, this part is for end-users. That means that they can see the result of your software. After everything is completed, you can hide the administrator part per UI so that the end-users are able to see the end result.</p>
-<h2 id="install-saposs-wf">Install Saposs WF</h2>
-<p>In order to install Saposs WF, please follow the following requirements:</p>
-<ul>
-<li>Make sure that your computer has installed .NET Framework 4.0 or higher.</li>
-<li>Download Saposs WF from <a href="http://www.saposs.com/developers/download">here</a>.</li>
-<li>Unzip/unrar the downloaded source.</li>
-<li>Open the Saposs WF program by double-clicking on the executable file <em>Saposs.Apps.WFApp</em>.</li>
-<li>Completed.</li>
-</ul>
-<p>Congratulations, from now, you can get started to use Saposs WF :)</p>
+                <h1 id="create-a-new-handler">Create a new Handler</h1>
+<p>First of all, you need to unzip the downloaded view project template and open it in Visual Studio. In order to create a new handler, you need to create a new class which implements IHandler. The following is sample code:</p>
+<p>For Saposs WF:</p>
+<div class="codehilite"><pre><span></span><span class="na">[Export(typeof(IHandler))]</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">Handler</span> <span class="p">:</span> <span class="n">IHandler</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Name</span> <span class="p">=&gt;</span> <span class="s">&quot;YourApp.Handlers.NewHandler&quot;</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span> <span class="p">=&gt;</span> <span class="s">&quot;New Handler&quot;</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span> <span class="p">=&gt;</span> <span class="s">&quot;...&quot;</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Version</span> <span class="p">=&gt;</span> <span class="s">&quot;Version 1.0.0&quot;</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="n">DateTime</span> <span class="n">CreatedDate</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="n">DateTime</span><span class="p">(</span><span class="m">2019</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">23</span><span class="p">);</span>
+
+    <span class="k">public</span> <span class="n">DateTime</span><span class="p">?</span> <span class="n">UpdatedDate</span> <span class="p">=&gt;</span> <span class="k">null</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">bool</span> <span class="n">IsEnabled</span> <span class="p">=&gt;</span> <span class="k">true</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">int</span> <span class="n">Order</span> <span class="p">=&gt;</span> <span class="m">2</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">Dependencies</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;();</span>
+
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">Execute</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// TODO: write code here...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>For Saposs Aquarium:</p>
+<div class="codehilite"><pre><span></span><span class="na">[Export(typeof(IHandler))]</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">Handler</span> <span class="p">:</span> <span class="n">IMvcHandler</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Name</span> <span class="p">=&gt;</span> <span class="s">&quot;YourApp.Handlers.NewMvcHandler&quot;</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span> <span class="p">=&gt;</span> <span class="s">&quot;New Handler&quot;</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span> <span class="p">=&gt;</span> <span class="s">&quot;...&quot;</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Version</span> <span class="p">=&gt;</span> <span class="s">&quot;Version 1.0.0&quot;</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="n">DateTime</span> <span class="n">CreatedDate</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="n">DateTime</span><span class="p">(</span><span class="m">2019</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">11</span><span class="p">);</span>
+
+    <span class="k">public</span> <span class="n">DateTime</span><span class="p">?</span> <span class="n">UpdatedDate</span> <span class="p">=&gt;</span> <span class="k">null</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">bool</span> <span class="n">IsEnabled</span> <span class="p">=&gt;</span> <span class="k">true</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">int</span> <span class="n">Order</span> <span class="p">=&gt;</span> <span class="m">2</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">Dependencies</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;();</span>
+
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Route</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span> <span class="p">=</span> <span class="s">&quot;default-handler&quot;</span>
+
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">Execute</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// TODO: write code here...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
                 
                   
                 
@@ -493,7 +466,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href=".." title="Welcome to Saposs" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../create-a-view/" title="Create a new View" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -502,19 +475,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Welcome to Saposs
+                Create a new View
               </span>
             </div>
           </a>
         
         
-          <a href="../intro-saposs-aquarium/" title="Introduce Saposs Aquarium" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../create-a-service/" title="Create a new Service" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Introduce Saposs Aquarium
+                Create a new Service
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
