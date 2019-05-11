@@ -40,7 +40,7 @@
     
     
       
-        <title>Create a new Service - Saposs Documentation</title>
+        <title>Manage Live Projects - Saposs Documentation</title>
       
     
     
@@ -104,7 +104,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#create-a-new-service" tabindex="1" class="md-skip">
+      <a href="#manage-live-projects" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -129,7 +129,7 @@
               Saposs Documentation
             </span>
             <span class="md-header-nav__topic">
-              Create a new Service
+              Manage Live Projects
             </span>
           
         </div>
@@ -209,8 +209,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../intro-saposs-wf/" title="Introduce to Saposs WF" class="md-nav__link">
-      Introduce to Saposs WF
+    <a href="../intro-saposs-wf/" title="Introduce Saposs WF" class="md-nav__link">
+      Introduce Saposs WF
     </a>
   </li>
 
@@ -221,7 +221,19 @@
 
 
   <li class="md-nav__item">
-    <a href="../quick-tour-saposs-wf/" title="Quick Tour" class="md-nav__link">
+    <a href="../intro-saposs-aquarium/" title="Introduce Saposs Aquarium" class="md-nav__link">
+      Introduce Saposs Aquarium
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../quick-tour/" title="Quick Tour" class="md-nav__link">
       Quick Tour
     </a>
   </li>
@@ -233,8 +245,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../what-is-saposs-wf-component/" title="What is Saposs WF Component?" class="md-nav__link">
-      What is Saposs WF Component?
+    <a href="../what-is-saposs-component/" title="What is Saposs Component?" class="md-nav__link">
+      What is Saposs Component?
     </a>
   </li>
 
@@ -245,7 +257,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../create-a-view-saposs-wf/" title="Create a new View" class="md-nav__link">
+    <a href="../create-a-view/" title="Create a new View" class="md-nav__link">
       Create a new View
     </a>
   </li>
@@ -257,8 +269,56 @@
 
 
   <li class="md-nav__item">
-    <a href="../create-a-handler-saposs-wf/" title="Create a new Handler" class="md-nav__link">
+    <a href="../create-a-handler/" title="Create a new Handler" class="md-nav__link">
       Create a new Handler
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../create-a-service/" title="Create a new Service" class="md-nav__link">
+      Create a new Service
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../connect-view-handler-service/" title="Connect View-Handler-Service" class="md-nav__link">
+      Connect View-Handler-Service
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../upload-component-saposs-wf/" title="Upload Component" class="md-nav__link">
+      Upload Component
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../sync-online-component/" title="Synchronize Online Components" class="md-nav__link">
+      Synchronize Online Components
     </a>
   </li>
 
@@ -277,34 +337,10 @@
       
     
     
-    <a href="./" title="Create a new Service" class="md-nav__link md-nav__link--active">
-      Create a new Service
+    <a href="./" title="Manage Live Projects" class="md-nav__link md-nav__link--active">
+      Manage Live Projects
     </a>
     
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../connect-v-h-s-saposs-wf/" title="Connect View-Handler-Service" class="md-nav__link">
-      Connect View-Handler-Service
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../upload-component-saposs-wf/" title="Upload Component" class="md-nav__link">
-      Upload Component
-    </a>
   </li>
 
     
@@ -348,35 +384,31 @@
               
                 
                 
-                <h1 id="create-a-new-service">Create a new Service</h1>
-<p>First of all, you need to unzip the downloaded view project template and open it in Visual Studio. In order to create a new service, you need to create a new class which implements IService. The following is sample code:</p>
-<div class="codehilite"><pre><span></span><span class="na">[Export(typeof(IService))]</span>
-<span class="k">public</span> <span class="k">class</span> <span class="nc">Service</span> <span class="p">:</span> <span class="n">IService</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="kt">string</span> <span class="n">Name</span> <span class="p">=&gt;</span> <span class="s">&quot;YourApp.Services.NewService&quot;</span><span class="p">;</span>
+                <h1 id="manage-live-projects">Manage Live Projects</h1>
+<div style="text-align: justify">
+Starting from the new version 1.4.0 of Saposs WF, you're able to manage your live projects by signing in and then synchronizing your projects anywhere as long as your internet connection is available. Here's a new feature which helps any developer to be able to release any project anywhere easily. Currently, Saposs Aquarium isn't supported yet.
+</div>
 
-    <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span> <span class="p">=&gt;</span> <span class="s">&quot;New service&quot;</span><span class="p">;</span>
-
-    <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span> <span class="p">=&gt;</span> <span class="s">&quot;This is a new service.&quot;</span><span class="p">;</span>
-
-    <span class="k">public</span> <span class="kt">string</span> <span class="n">Version</span> <span class="p">=&gt;</span> <span class="s">&quot;Version 1.0.0&quot;</span><span class="p">;</span>
-
-    <span class="k">public</span> <span class="n">DateTime</span> <span class="n">CreatedDate</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="n">DateTime</span><span class="p">(</span><span class="m">2019</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">23</span><span class="p">);</span>
-
-    <span class="k">public</span> <span class="n">DateTime</span><span class="p">?</span> <span class="n">UpdatedDate</span> <span class="p">=&gt;</span> <span class="k">null</span><span class="p">;</span>
-
-    <span class="k">public</span> <span class="kt">bool</span> <span class="n">IsEnabled</span> <span class="p">=&gt;</span> <span class="k">true</span><span class="p">;</span>
-
-    <span class="k">public</span> <span class="kt">int</span> <span class="n">Order</span> <span class="p">=&gt;</span> <span class="m">3</span><span class="p">;</span>
-
-    <span class="k">public</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">Dependencies</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;();</span>
-
-    <span class="k">public</span> <span class="kt">object</span> <span class="nf">Execute</span><span class="p">(</span><span class="k">params</span> <span class="kt">object</span><span class="p">[]</span> <span class="n">objs</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="m">1</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
+<p>In order to do that, please follow some following steps:</p>
+<ul>
+<li>Download and open Saposs WF v1.4.0.</li>
+<li>Press the button "Go to admin page."</li>
+<li>Select the tab "My Profile".</li>
+</ul>
+<p><img alt="My Profile" src="../assets/images/f10.png" title="My Profile" /></p>
+<ul>
+<li>Press the button "Sign In".</li>
+</ul>
+<p><img alt="Sign In" src="../assets/images/f11.png" title="Sign In" /></p>
+<ul>
+<li>Enter your credential to sign in.</li>
+<li>The result is as follows:</li>
+</ul>
+<p><img alt="Sign In Dialog" src="../assets/images/f12.png" title="Sign In Dialog" /></p>
+<ul>
+<li>To synchronize your project into current Saposs WF instance, please choose a project in combobox at the previous screenshot. Then, continue to press "Yes".</li>
+<li>Completed.</li>
+</ul>
                 
                   
                 
@@ -397,7 +429,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../create-a-handler-saposs-wf/" title="Create a new Handler" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../sync-online-component/" title="Synchronize Online Components" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -406,19 +438,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Create a new Handler
+                Synchronize Online Components
               </span>
             </div>
           </a>
         
         
-          <a href="../connect-v-h-s-saposs-wf/" title="Connect View-Handler-Service" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../about/" title="About Documentation" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Connect View-Handler-Service
+                About Documentation
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -434,7 +466,7 @@
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright 2019 by Saposs. All rights reserved.
+            Copyright 2019 by <a href="http://www.saposs.com">Saposs</a>. All rights reserved.
           </div>
         
         powered by

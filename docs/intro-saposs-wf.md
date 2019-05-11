@@ -1,10 +1,10 @@
 # Introduce Saposs WF
 
-Saposs WF is a Windows desktop application which was built on Saposs Framework. It assists you to create any desktop application which will become easier to maintain.
+Saposs WF is a Windows desktop application which was built on Saposs Framework. It assists you to build any desktop application which will become easier to maintain.
 
 ## Why using Saposs WF?
 
-Saposs WF provides you a friendly UI to manage all components. Additionally, you're able to configure the settings.
+Saposs WF provides you a simple UI to manage all components. Additionally, you're able to configure the settings.
 
 ## How does Saposs WF work?
 
@@ -15,7 +15,7 @@ Saposs WF separated an application into 2 parts: administrator part and developm
 In order to install Saposs WF, please follow the following requirements:
 
 - Make sure that your computer has installed .NET Framework 4.0 or higher.
-- Download Saposs WF from here.
+- Download Saposs WF from [here](http://www.saposs.com/developers/download).
 - Unzip/unrar the downloaded source.
 - Open the Saposs WF program by double-clicking on the executable file *Saposs.Apps.WFApp*.
 - Completed.

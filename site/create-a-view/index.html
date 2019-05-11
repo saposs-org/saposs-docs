@@ -209,8 +209,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../intro-saposs-wf/" title="Introduce to Saposs WF" class="md-nav__link">
-      Introduce to Saposs WF
+    <a href="../intro-saposs-wf/" title="Introduce Saposs WF" class="md-nav__link">
+      Introduce Saposs WF
     </a>
   </li>
 
@@ -221,7 +221,19 @@
 
 
   <li class="md-nav__item">
-    <a href="../quick-tour-saposs-wf/" title="Quick Tour" class="md-nav__link">
+    <a href="../intro-saposs-aquarium/" title="Introduce Saposs Aquarium" class="md-nav__link">
+      Introduce Saposs Aquarium
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../quick-tour/" title="Quick Tour" class="md-nav__link">
       Quick Tour
     </a>
   </li>
@@ -233,8 +245,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../what-is-saposs-wf-component/" title="What is Saposs WF Component?" class="md-nav__link">
-      What is Saposs WF Component?
+    <a href="../what-is-saposs-component/" title="What is Saposs Component?" class="md-nav__link">
+      What is Saposs Component?
     </a>
   </li>
 
@@ -299,6 +311,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#template-view" title="Template View" class="md-nav__link">
+    Template View
+  </a>
+  
+</li>
+      
       
       
       
@@ -316,7 +335,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../create-a-handler-saposs-wf/" title="Create a new Handler" class="md-nav__link">
+    <a href="../create-a-handler/" title="Create a new Handler" class="md-nav__link">
       Create a new Handler
     </a>
   </li>
@@ -328,7 +347,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../create-a-service-saposs-wf/" title="Create a new Service" class="md-nav__link">
+    <a href="../create-a-service/" title="Create a new Service" class="md-nav__link">
       Create a new Service
     </a>
   </li>
@@ -340,7 +359,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../connect-v-h-s-saposs-wf/" title="Connect View-Handler-Service" class="md-nav__link">
+    <a href="../connect-view-handler-service/" title="Connect View-Handler-Service" class="md-nav__link">
       Connect View-Handler-Service
     </a>
   </li>
@@ -354,6 +373,30 @@
   <li class="md-nav__item">
     <a href="../upload-component-saposs-wf/" title="Upload Component" class="md-nav__link">
       Upload Component
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../sync-online-component/" title="Synchronize Online Components" class="md-nav__link">
+      Synchronize Online Components
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../manage-live-projects/" title="Manage Live Projects" class="md-nav__link">
+      Manage Live Projects
     </a>
   </li>
 
@@ -418,6 +461,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#template-view" title="Template View" class="md-nav__link">
+    Template View
+  </a>
+  
+</li>
+      
       
       
       
@@ -436,16 +486,21 @@
                 
                 
                 <h1 id="create-a-new-view">Create a new View</h1>
-<p>There are four kinds of following views in Saposs WF:</p>
+<p>There are four kinds of following views in both Saposs WF and Aquarium:</p>
 <ul>
 <li>Root View.</li>
 <li>Administrator View.</li>
 <li>End-User View.</li>
 <li>Normal View.</li>
 </ul>
+<p>For Saposs Aquarium, there's still more one template view:</p>
+<ul>
+<li>Template View.</li>
+</ul>
 <p>First of all, you need to unzip the downloaded view project template and open it in Visual Studio. In order to create a new view, you need to create a new class which implements IView.</p>
 <h2 id="root-view">Root View</h2>
 <p>Root View is also called Start View. This view will be shown for the first time at the startup time. It is simple to create this view. The following is sample code:</p>
+<p>For Saposs WF:</p>
 <div class="codehilite"><pre><span></span><span class="na">[Export(typeof(IView))]</span>
 <span class="k">public</span> <span class="k">class</span> <span class="nc">EntryView</span> <span class="p">:</span> <span class="n">IView</span>
 <span class="p">{</span>
@@ -485,9 +540,52 @@
 </pre></div>
 
 
+<p>For Saposs Aquarium:</p>
+<div class="codehilite"><pre><span></span><span class="na">[Export(typeof(IView))]</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">EntryView</span> <span class="p">:</span> <span class="n">IMvcView</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">bool</span> <span class="n">IsDefault</span> <span class="p">=&gt;</span> <span class="k">false</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">bool</span> <span class="n">IsAdmin</span> <span class="p">=&gt;</span> <span class="k">true</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="n">ViewTypes</span> <span class="n">Type</span> <span class="p">=&gt;</span> <span class="n">ViewTypes</span><span class="p">.</span><span class="n">WebPage</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span> <span class="p">=&gt;</span> <span class="s">&quot;Entry MVC View&quot;</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span> <span class="p">=&gt;</span> <span class="s">&quot;This is a entry view.&quot;</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Version</span> <span class="p">=&gt;</span> <span class="s">&quot;Version 1.0.0&quot;</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="n">DateTime</span> <span class="n">CreatedDate</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="n">DateTime</span><span class="p">(</span><span class="m">2019</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">11</span><span class="p">);</span>
+
+    <span class="k">public</span> <span class="n">DateTime</span><span class="p">?</span> <span class="n">UpdatedDate</span> <span class="p">=&gt;</span> <span class="k">null</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">bool</span> <span class="n">IsEnabled</span> <span class="p">=&gt;</span> <span class="k">true</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">int</span> <span class="n">Order</span> <span class="p">=&gt;</span> <span class="m">2</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">object</span><span class="p">&gt;</span> <span class="n">Deps</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">object</span><span class="p">&gt;();</span>
+
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Name</span> <span class="p">=&gt;</span> <span class="s">&quot;YourApp.Views.EntryView&quot;</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">Dependencies</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;();</span>
+
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Route</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span> <span class="p">=</span> <span class="s">&quot;entry-view&quot;</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">TemplateName</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span> <span class="p">=</span> <span class="s">&quot;[YOUR_TEMPLATE_NAME]&quot;</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">object</span> <span class="nf">Get</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">Utils</span><span class="p">.</span><span class="n">ReadAssemblyResourceFile</span><span class="p">&lt;</span><span class="n">View</span><span class="p">&gt;();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
 <p>When IsAdmin was set to true and IsDefault was set to false, this view will be called "Entry View". As above sample, we assume that "EntryForm" form was created in your view.</p>
 <h2 id="administrator-view">Administrator View</h2>
 <p>Administrator View will be shown, after end-users clicked on the button "Go to Admin Page". The following is sample code to create this view:</p>
+<p>For Saposs WF:</p>
 <div class="codehilite"><pre><span></span><span class="na">[Export(typeof(IView))]</span>
 <span class="k">public</span> <span class="k">class</span> <span class="nc">AdminView</span> <span class="p">:</span> <span class="n">IView</span>
 <span class="p">{</span>
@@ -527,9 +625,52 @@
 </pre></div>
 
 
+<p>For Saposs Aquarium:</p>
+<div class="codehilite"><pre><span></span><span class="na">[Export(typeof(IView))]</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">AdminView</span> <span class="p">:</span> <span class="n">IMvcView</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">bool</span> <span class="n">IsDefault</span> <span class="p">=&gt;</span> <span class="k">true</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">bool</span> <span class="n">IsAdmin</span> <span class="p">=&gt;</span> <span class="k">true</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="n">ViewTypes</span> <span class="n">Type</span> <span class="p">=&gt;</span> <span class="n">ViewTypes</span><span class="p">.</span><span class="n">WebPage</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span> <span class="p">=&gt;</span> <span class="s">&quot;Admin MVC View&quot;</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span> <span class="p">=&gt;</span> <span class="s">&quot;This is a admin view.&quot;</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Version</span> <span class="p">=&gt;</span> <span class="s">&quot;Version 1.0.0&quot;</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="n">DateTime</span> <span class="n">CreatedDate</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="n">DateTime</span><span class="p">(</span><span class="m">2019</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">11</span><span class="p">);</span>
+
+    <span class="k">public</span> <span class="n">DateTime</span><span class="p">?</span> <span class="n">UpdatedDate</span> <span class="p">=&gt;</span> <span class="k">null</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">bool</span> <span class="n">IsEnabled</span> <span class="p">=&gt;</span> <span class="k">true</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">int</span> <span class="n">Order</span> <span class="p">=&gt;</span> <span class="m">2</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">object</span><span class="p">&gt;</span> <span class="n">Deps</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">object</span><span class="p">&gt;();</span>
+
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Name</span> <span class="p">=&gt;</span> <span class="s">&quot;YourApp.Views.AdminView&quot;</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">Dependencies</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;();</span>
+
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Route</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span> <span class="p">=</span> <span class="s">&quot;admin-view&quot;</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">TemplateName</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span> <span class="p">=</span> <span class="s">&quot;[YOUR_TEMPLATE_NAME]&quot;</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">object</span> <span class="nf">Get</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">Utils</span><span class="p">.</span><span class="n">ReadAssemblyResourceFile</span><span class="p">&lt;</span><span class="n">View</span><span class="p">&gt;();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
 <p>When IsAdmin was set to true and IsDefault was set to true, this view will be called "Administrator View". As above sample, we assume that "AdminForm" form was created in your view.</p>
 <h2 id="end-user-view">End-User View</h2>
 <p>End-User View will be shown, after end-users clicked on the button "Go to Development Page". The following is sample code to create this view:</p>
+<p>For Saposs WF:</p>
 <div class="codehilite"><pre><span></span><span class="na">[Export(typeof(IView))]</span>
 <span class="k">public</span> <span class="k">class</span> <span class="nc">EndUserView</span> <span class="p">:</span> <span class="n">IView</span>
 <span class="p">{</span>
@@ -569,9 +710,52 @@
 </pre></div>
 
 
+<p>For Saposs Aquarium:</p>
+<div class="codehilite"><pre><span></span><span class="na">[Export(typeof(IView))]</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">EndUserView</span> <span class="p">:</span> <span class="n">IMvcView</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">bool</span> <span class="n">IsDefault</span> <span class="p">=&gt;</span> <span class="k">true</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">bool</span> <span class="n">IsAdmin</span> <span class="p">=&gt;</span> <span class="k">false</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="n">ViewTypes</span> <span class="n">Type</span> <span class="p">=&gt;</span> <span class="n">ViewTypes</span><span class="p">.</span><span class="n">WebPage</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span> <span class="p">=&gt;</span> <span class="s">&quot;Admin MVC End-User View&quot;</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span> <span class="p">=&gt;</span> <span class="s">&quot;This is a end-user view.&quot;</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Version</span> <span class="p">=&gt;</span> <span class="s">&quot;Version 1.0.0&quot;</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="n">DateTime</span> <span class="n">CreatedDate</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="n">DateTime</span><span class="p">(</span><span class="m">2019</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">11</span><span class="p">);</span>
+
+    <span class="k">public</span> <span class="n">DateTime</span><span class="p">?</span> <span class="n">UpdatedDate</span> <span class="p">=&gt;</span> <span class="k">null</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">bool</span> <span class="n">IsEnabled</span> <span class="p">=&gt;</span> <span class="k">true</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">int</span> <span class="n">Order</span> <span class="p">=&gt;</span> <span class="m">2</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">object</span><span class="p">&gt;</span> <span class="n">Deps</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">object</span><span class="p">&gt;();</span>
+
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Name</span> <span class="p">=&gt;</span> <span class="s">&quot;YourApp.Views.EndUserView&quot;</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">Dependencies</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;();</span>
+
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Route</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span> <span class="p">=</span> <span class="s">&quot;enduser-view&quot;</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">TemplateName</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span> <span class="p">=</span> <span class="s">&quot;[YOUR_TEMPLATE_NAME]&quot;</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">object</span> <span class="nf">Get</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">Utils</span><span class="p">.</span><span class="n">ReadAssemblyResourceFile</span><span class="p">&lt;</span><span class="n">View</span><span class="p">&gt;();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
 <p>When IsAdmin was set to false and IsDefault was set to true, this view will be called "End-User View". As above sample, we assume that "EndUserForm" form was created in your view.</p>
 <h2 id="normal-view">Normal View</h2>
 <p>Normal View will be called using Saposs APIs. The following is sample code to create this view:</p>
+<p>For Saposs WF:</p>
 <div class="codehilite"><pre><span></span><span class="na">[Export(typeof(IView))]</span>
 <span class="k">public</span> <span class="k">class</span> <span class="nc">NormalView</span> <span class="p">:</span> <span class="n">IView</span>
 <span class="p">{</span>
@@ -611,7 +795,90 @@
 </pre></div>
 
 
+<p>For Saposs Aquarium:</p>
+<div class="codehilite"><pre><span></span><span class="na">[Export(typeof(IView))]</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">NormalView</span> <span class="p">:</span> <span class="n">IMvcView</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">bool</span> <span class="n">IsDefault</span> <span class="p">=&gt;</span> <span class="k">false</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">bool</span> <span class="n">IsAdmin</span> <span class="p">=&gt;</span> <span class="k">false</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="n">ViewTypes</span> <span class="n">Type</span> <span class="p">=&gt;</span> <span class="n">ViewTypes</span><span class="p">.</span><span class="n">WebPage</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span> <span class="p">=&gt;</span> <span class="s">&quot;Normal MVC View&quot;</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span> <span class="p">=&gt;</span> <span class="s">&quot;This is a normal view.&quot;</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Version</span> <span class="p">=&gt;</span> <span class="s">&quot;Version 1.0.0&quot;</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="n">DateTime</span> <span class="n">CreatedDate</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="n">DateTime</span><span class="p">(</span><span class="m">2019</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">11</span><span class="p">);</span>
+
+    <span class="k">public</span> <span class="n">DateTime</span><span class="p">?</span> <span class="n">UpdatedDate</span> <span class="p">=&gt;</span> <span class="k">null</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">bool</span> <span class="n">IsEnabled</span> <span class="p">=&gt;</span> <span class="k">true</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">int</span> <span class="n">Order</span> <span class="p">=&gt;</span> <span class="m">2</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">object</span><span class="p">&gt;</span> <span class="n">Deps</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">object</span><span class="p">&gt;();</span>
+
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Name</span> <span class="p">=&gt;</span> <span class="s">&quot;YourApp.Views.NormalView&quot;</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">Dependencies</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;();</span>
+
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Route</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span> <span class="p">=</span> <span class="s">&quot;normal-view&quot;</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">TemplateName</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span> <span class="p">=</span> <span class="s">&quot;[YOUR_TEMPLATE_NAME]&quot;</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">object</span> <span class="nf">Get</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">Utils</span><span class="p">.</span><span class="n">ReadAssemblyResourceFile</span><span class="p">&lt;</span><span class="n">View</span><span class="p">&gt;();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
 <p>When IsAdmin was set to false and IsDefault was set to false, this view will be called "Normal View". As above sample, we assume that "NormalForm" form was created in your view.</p>
+<h2 id="template-view">Template View</h2>
+<p>Template View is similar to Normal View except only for web application. The following is sample code to create this view:</p>
+<div class="codehilite"><pre><span></span><span class="na">[Export(typeof(IView))]</span>
+<span class="k">public</span> <span class="k">class</span> <span class="nc">TemplateView</span> <span class="p">:</span> <span class="n">IMvcView</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">bool</span> <span class="n">IsDefault</span> <span class="p">=&gt;</span> <span class="k">false</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">bool</span> <span class="n">IsAdmin</span> <span class="p">=&gt;</span> <span class="k">false</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="n">ViewTypes</span> <span class="n">Type</span> <span class="p">=&gt;</span> <span class="n">ViewTypes</span><span class="p">.</span><span class="n">MasterWebPage</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Title</span> <span class="p">=&gt;</span> <span class="s">&quot;Template MVC View&quot;</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Description</span> <span class="p">=&gt;</span> <span class="s">&quot;This is a template view.&quot;</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Version</span> <span class="p">=&gt;</span> <span class="s">&quot;Version 1.0.0&quot;</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="n">DateTime</span> <span class="n">CreatedDate</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="n">DateTime</span><span class="p">(</span><span class="m">2019</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">11</span><span class="p">);</span>
+
+    <span class="k">public</span> <span class="n">DateTime</span><span class="p">?</span> <span class="n">UpdatedDate</span> <span class="p">=&gt;</span> <span class="k">null</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">bool</span> <span class="n">IsEnabled</span> <span class="p">=&gt;</span> <span class="k">true</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">int</span> <span class="n">Order</span> <span class="p">=&gt;</span> <span class="m">2</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">object</span><span class="p">&gt;</span> <span class="n">Deps</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">object</span><span class="p">&gt;();</span>
+
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Name</span> <span class="p">=&gt;</span> <span class="s">&quot;YourApp.Views.TemplateView&quot;</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">Dependencies</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;();</span>
+
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Route</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span> <span class="p">=</span> <span class="kt">string</span><span class="p">.</span><span class="n">Empty</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">TemplateName</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">};</span>
+
+    <span class="k">public</span> <span class="kt">object</span> <span class="nf">Get</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">Utils</span><span class="p">.</span><span class="n">ReadAssemblyResourceFile</span><span class="p">&lt;</span><span class="n">View</span><span class="p">&gt;();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
                 
                   
                 
@@ -632,7 +899,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../what-is-saposs-wf-component/" title="What is Saposs WF Component?" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../what-is-saposs-component/" title="What is Saposs Component?" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -641,13 +908,13 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                What is Saposs WF Component?
+                What is Saposs Component?
               </span>
             </div>
           </a>
         
         
-          <a href="../create-a-handler-saposs-wf/" title="Create a new Handler" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../create-a-handler/" title="Create a new Handler" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
@@ -669,7 +936,7 @@
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright 2019 by Saposs. All rights reserved.
+            Copyright 2019 by <a href="http://www.saposs.com">Saposs</a>. All rights reserved.
           </div>
         
         powered by
