@@ -379,6 +379,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../hello-world-wf-tutorial/" title="Hello World WF Tutorial" class="md-nav__link">
+      Hello World WF Tutorial
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
     <a href="../about/" title="About Documentation" class="md-nav__link">
       About Documentation
     </a>
@@ -496,7 +508,7 @@
 
 
 <p>Connect to an existing MVC view:</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Your view route comes from Route property when implementing IMvcView.</span>
+<div class="codehilite"><pre><span></span><span class="c1">// Your view route comes from Route property when implementing IWebMvcView.</span>
 <span class="kt">var</span> <span class="n">mvcView</span> <span class="p">=</span> <span class="n">Utils</span><span class="p">.</span><span class="n">ExecuteMvcView</span><span class="p">(</span><span class="s">&quot;[YOUR_ROUTE]&quot;</span><span class="p">);</span>
 </pre></div>
 
@@ -508,13 +520,13 @@
 
 
 <p>Connect to an existing MVC handler:</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Your handler route comes from Route property when implementing IMvcHandler.</span>
+<div class="codehilite"><pre><span></span><span class="c1">// Your handler route comes from Route property when implementing IWebMvcHandler.</span>
 <span class="n">Utils</span><span class="p">.</span><span class="n">ExecuteMvcHandler</span><span class="p">(</span><span class="s">&quot;[YOUR_ROUTE]&quot;</span><span class="p">);</span> 
 </pre></div>
 
 
 <p>Connect to multiple existing MVC handlers:</p>
-<div class="codehilite"><pre><span></span><span class="c1">// Your handler route comes from Route property when implementing IMvcHandler.</span>
+<div class="codehilite"><pre><span></span><span class="c1">// Your handler route comes from Route property when implementing IWebMvcHandler.</span>
 <span class="n">Utils</span><span class="p">.</span><span class="n">ExecuteMultipleMvcHandlers</span><span class="p">(</span><span class="s">&quot;[YOUR_ROUTE]&quot;</span><span class="p">);</span> 
 </pre></div>
 
