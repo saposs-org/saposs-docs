@@ -32,7 +32,7 @@ var templateView = Utils.ExecuteTemplateView("[YOUR_VIEW_NAME]");
 Connect to an existing MVC view:
 
 ``` csharp
-// Your view route comes from Route property when implementing IMvcView.
+// Your view route comes from Route property when implementing IWebMvcView.
 var mvcView = Utils.ExecuteMvcView("[YOUR_ROUTE]");
 ```
 
@@ -46,14 +46,14 @@ Utils.ExecuteHandler("[YOUR_HANDLER_NAME]");
 Connect to an existing MVC handler:
 
 ``` csharp
-// Your handler route comes from Route property when implementing IMvcHandler.
+// Your handler route comes from Route property when implementing IWebMvcHandler.
 Utils.ExecuteMvcHandler("[YOUR_ROUTE]"); 
 ```
 
 Connect to multiple existing MVC handlers:
 
 ``` csharp
-// Your handler route comes from Route property when implementing IMvcHandler.
+// Your handler route comes from Route property when implementing IWebMvcHandler.
 Utils.ExecuteMultipleMvcHandlers("[YOUR_ROUTE]"); 
 ```
 

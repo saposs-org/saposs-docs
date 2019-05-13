@@ -64,7 +64,7 @@ For Saposs Aquarium:
 ``` csharp
 
 [Export(typeof(IView))]
-public class EntryView : IMvcView
+public class EntryView : IWebMvcView
 {
     public bool IsDefault => false;
 
@@ -156,7 +156,7 @@ For Saposs Aquarium:
 ``` csharp
 
 [Export(typeof(IView))]
-public class AdminView : IMvcView
+public class AdminView : IWebMvcView
 {
     public bool IsDefault => true;
 
@@ -248,7 +248,7 @@ For Saposs Aquarium:
 ``` csharp
 
 [Export(typeof(IView))]
-public class EndUserView : IMvcView
+public class EndUserView : IWebMvcView
 {
     public bool IsDefault => true;
 
@@ -340,7 +340,7 @@ For Saposs Aquarium:
 ``` csharp
 
 [Export(typeof(IView))]
-public class NormalView : IMvcView
+public class NormalView : IWebMvcView
 {
     public bool IsDefault => false;
 
@@ -388,7 +388,7 @@ Template View is similar to Normal View except only for web application. The fol
 ``` csharp
 
 [Export(typeof(IView))]
-public class TemplateView : IMvcView
+public class TemplateView : IWebMvcView
 {
     public bool IsDefault => false;
 

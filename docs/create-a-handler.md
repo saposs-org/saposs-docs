@@ -40,7 +40,7 @@ For Saposs Aquarium:
 ``` csharp
 
 [Export(typeof(IHandler))]
-public class Handler : IMvcHandler
+public class Handler : IWebMvcHandler
 {
     public string Name => "YourApp.Handlers.NewMvcHandler";
 

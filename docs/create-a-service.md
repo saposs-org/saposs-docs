@@ -40,7 +40,7 @@ For Saposs Aquarium:
 ``` csharp
 
 [Export(typeof(IService))]
-public class Service : IMvcService
+public class Service : IWebMvcService
 {
     public string Name => "YourApp.Services.NewMvcService";
 

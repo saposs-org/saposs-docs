@@ -16,10 +16,25 @@ nav:
   - 'Upload Component': 'upload-component-saposs-wf.md'
   - 'Synchronize Online Components': 'sync-online-component.md'
   - 'Manage Live Projects': 'manage-live-projects.md'
+  - 'Hello World Desktop Tutorial': 'hello-world-wf-tutorial.md'
+  - 'Hello World Web Tutorial': 'hello-world-aquarium-tutorial.md'
   - 'About Documentation': 'about.md'
 markdown_extensions:
   - codehilite
 site_description: 'All documents and user guides for Saposs.'
 site_author: 'saposs'
+repo_url: https://github.com/saposs-org
 google_analytics: ['UA-89360024-2', 'saposs.com']
 copyright: 'Copyright 2019 by <a href="http://www.saposs.com">Saposs</a>. All rights reserved.'
+extra:
+  feature:
+    tabs: false
+  social:
+    - type: globe
+      link: http://www.saposs.com
+    - type: github-alt
+      link: https://www.github.com/saposs-org
+    - type: twitter
+      link: https://www.twitter.com/the_saposs
+    - type: facebook
+      link: https://www.facebook.com/the.saposs
